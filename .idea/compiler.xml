@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Yuliya_|Padazhetskaya_project" />
+        <module name="Yuliya_Padazhetskaya_project" />
       </profile>
     </annotationProcessing>
   </component>
