@@ -1,4 +1,4 @@
-package settings;
+package ApplicationItems;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,6 +18,6 @@ public class MailLogin {
 
         MailRegistration mailRegistration = new  MailRegistration();
         PageFactory.initElements(driver, mailRegistration);
-        mailRegistration.YandexMailRegistration("EMAIL", "PASSWORD");
+        mailRegistration.YandexMailRegistration();
     }
 }
