@@ -5,9 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.Properties;
+
 public class SilverSteps {
 
-public void CheckPage (WebDriver driver){
+    public final String Yandex_Path;
+    Properties property;
+    public SilverSteps() {
+        Yandex_Path = "src/test/java/properties/YandexMail.properties";
+    }
+
+    public void CheckPage (WebDriver driver){
     PageFactory.initElements(driver, this);
 }
 @FindBy(xpath = "//*[@class=/sc-fyjhYU eVJmYW/]")
@@ -22,18 +30,21 @@ WebElement passwordField;
 @FindBy(xpath = "//*[text()= /Войти/]")
     WebElement loginButton;
 
-public  void EnterEmailToLoginField(String email){
-    loginField.sendKeys(email);
+
+public void OpenLoginContainer(){
+    loginContainer.click();
 }
-public  void EnterPasswordToPasswordField(String password){
-    passwordField.sendKeys(password);
+public  void EnterEmailToLoginField(){
+    loginField.sendKeys(property.getProperty("EMAIL"));
+}
+public  void EnterPasswordToPasswordField(){
+    passwordField.sendKeys(property.getProperty("PASSWORD"));
 }
 
-public void SubmitByButton(boolean value){
-    if(!value) loginButton.click();
-    try { Thread.sleep(3000);}
-    catch (InterruptedException e) {}
-}
+public void SubmitByButton(){
+    boolean value = false;
+   loginButton.click();
 
+}
 }
 
