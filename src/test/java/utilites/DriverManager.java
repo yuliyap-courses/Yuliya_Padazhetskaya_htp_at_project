@@ -9,7 +9,7 @@ import settings.Config;
 
 public class DriverManager {
 
-    public static WebDriver getDriver(Config config) {
+    public static WebDriver getDriver( Config config) {
 
         switch (config) {
             case CHROME:

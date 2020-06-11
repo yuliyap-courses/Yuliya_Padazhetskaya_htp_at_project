@@ -11,4 +11,8 @@ public class Driver {
         return webDriver.get();
     }
 
+    public static void initDriver(Config config)
+    {
+        Driver.initDriver(Config.CHROME);
+    }
 }
