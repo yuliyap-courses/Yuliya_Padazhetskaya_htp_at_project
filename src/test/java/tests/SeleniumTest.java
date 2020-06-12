@@ -1,4 +1,5 @@
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
+package tests;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SeleniumTest {
 
-      public static void main(MysqlxDatatypes.Scalar.String[] args) throws InterruptedException {
+      public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "src/test/java/webDriver/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https:google.com");
