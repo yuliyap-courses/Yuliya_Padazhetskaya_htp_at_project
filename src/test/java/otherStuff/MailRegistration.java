@@ -4,6 +4,7 @@ package otherStuff;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -22,10 +23,10 @@ public class MailRegistration {
     WebElement submitButton;
 
     public MailRegistration() {
-        property = new Properties(Integer.parseInt(Yandex_Path));
+        property = new Properties();
     }
 
-    public  void YandexMailRegistration () throws InterruptedException {
+    public  void YandexMailRegistration () throws InterruptedException, IOException {
 
         mailField.sendKeys(property.getProperty("EMAIL"));
         passwordField.sendKeys(property.getProperty("PASSWORD"));
