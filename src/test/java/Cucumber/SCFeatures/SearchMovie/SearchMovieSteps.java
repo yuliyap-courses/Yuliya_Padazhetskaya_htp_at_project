@@ -3,6 +3,7 @@ package Cucumber.SCFeatures.SearchMovie;
 import Cucumber.SCFeatures.BasicSteps.SilverSteps;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -15,7 +16,6 @@ import utilites.Driver;
 public class SearchMovieSteps {
     WebDriver driver;
     SilverSteps silverSteps = new SilverSteps();
-
 
     @Before
 
@@ -30,8 +30,8 @@ public class SearchMovieSteps {
 
     @When("I search for <search word> word")
     public void iSearchForSearchWordWord() {
-        String SearchWorld = "five";
-        silverSteps.SearchFilms(SearchWorld);
+        String SearchWord = "five";
+        silverSteps.SearchFilms(SearchWord);
         driver.findElement(By.xpath("//*[@class = /sc-gzVnrw kpyERI/]")).sendKeys(Keys.ENTER);
     }
 
@@ -40,9 +40,10 @@ public class SearchMovieSteps {
         silverSteps.SearchContainerShown();
     }
 
-    @Then("each item name or description contains <search word>")
+    @And("each item name or description contains <search word>")
     public void eachItemNameOrDescriptionContainsSearchWord() {
-
+        String SearchWord = "five";
+        silverSteps.CompareSearchWorld(SearchWord);
     }
     @After
     public void AfterTest(){

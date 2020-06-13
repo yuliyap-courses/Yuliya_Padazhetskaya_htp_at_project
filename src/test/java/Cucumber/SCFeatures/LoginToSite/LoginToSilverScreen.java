@@ -39,7 +39,7 @@ SilverSteps silverSteps = new SilverSteps();
 
     @Then("I can see Red Carpet Club <level> in upper right corner")
     public void iCanSeeRedCarpetClubLevelInUpperRightCorner() {
-     //   Assert.assertFalse(!new SilverSteps().AllertShows(silverSteps.AllertShows()));
+    silverSteps.AllertShows();
     }
 
 }
