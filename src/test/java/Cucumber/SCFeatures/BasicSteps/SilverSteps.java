@@ -1,9 +1,6 @@
 package Cucumber.SCFeatures.BasicSteps;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilites.Driver;
@@ -25,25 +22,33 @@ public class SilverSteps {
 WebElement loginContainer;
 
 @FindBy(xpath ="//*[@type= /email/]")
-    WebElement loginField;
+WebElement loginField;
 
 @FindBy(xpath = "//*[@type= /password/]")
 WebElement passwordField;
 
 @FindBy(xpath = "//*[text()= /Войти/]")
-    WebElement loginButton;
+WebElement loginButton;
 @FindBy(xpath = "//*[contains(text(),'%s')]")
 WebElement Allert;
+
+@FindBy(xpath ="//*[@class = /sc-gzVnrw kpyERI/]" )
+WebElement searchField;
+
+@FindBy(xpath = "//*class='sc-fhiYOA hTrPQB']")
+WebElement searchContainer;
 
 
 public void OpenLoginContainer(){
     loginContainer.click();
 }
-public  void EnterEmailToLoginField(){
+public boolean EnterEmailToLoginField(Object o){
     loginField.sendKeys(property.getProperty("EMAIL"));
+    return false;
 }
-public  void EnterPasswordToPasswordField(){
+public boolean EnterPasswordToPasswordField(Object o){
     passwordField.sendKeys(property.getProperty("PASSWORD"));
+    return false;
 }
 
 public void SubmitByButton(){
@@ -51,8 +56,16 @@ public void SubmitByButton(){
    loginButton.click();
 }
 
-public boolean AllertSows(){
-    return Driver.getWebDriver().findElement((SearchContext) By.xpath(String.format(String.valueOf(Allert)))).isDisplayed();
+public boolean AllertShows(String arg){
+    return  Driver.getWebDriver().findElement((SearchContext) By.xpath(String.format(arg, Allert))).isDisplayed();
+}
+
+    public void SearchFilms(String searchWorld){
+        loginField.sendKeys();
+    }
+
+    public void  SearchContainerShown(){
+     searchContainer.findElement(By.xpath("//*class='sc-fhiYOA hTrPQB']")).sendKeys(Keys.RETURN);
 }
 }
 

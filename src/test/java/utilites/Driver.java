@@ -1,5 +1,6 @@
 package utilites;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import settings.Config;
 
@@ -15,4 +16,12 @@ public class Driver {
     {
         Driver.initDriver(Config.CHROME);
     }
+
+    public static void getWebDriver(By xpath) {
+    }
+
+    public static By getWebDriver() {
+        return null;
+    }
 }
+
