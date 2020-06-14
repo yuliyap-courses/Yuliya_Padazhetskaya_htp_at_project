@@ -1,9 +1,11 @@
 package Cucumber.SCFeatures.BasicSteps;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utilites.Driver;
 
 import java.util.Properties;
 
@@ -34,7 +36,7 @@ public class SilverSteps {
     @FindBy(xpath = "//*[contains(text(),'%s')]")
     WebElement Allert;
 
-    @FindBy(xpath = "//*[@class = /sc-gzVnrw kpyERI/]")
+    @FindBy(xpath = "//*[@class = '/sc-gzVnrw kpyERI/']")
     WebElement searchField;
 
     @FindBy(xpath = "//*class='sc-fhiYOA hTrPQB']")
@@ -60,9 +62,9 @@ public class SilverSteps {
         loginButton.click();
     }
 
-    public boolean AllertShows() {
+   /* public boolean AllertShows() {
        // return Driver.getWebDriver().findElement((SearchContext) By.xpath(String.format(Allert))).isDisplayed();
-    }
+    }*/
 
     public void SearchFilms(String SearchWorld) {
         loginField.sendKeys();

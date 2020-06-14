@@ -1,10 +1,9 @@
-package otherStuff;
+package MailImplementation;
 
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -19,20 +18,25 @@ public class MailRegistration {
     @FindBy (id="password")
     WebElement passwordField;
 
-    @FindBy(xpath = "//*[@id=/root/]/div/div[2]/div/div[1]/div[2]/div/div/div/form/div[3]/button")
+    @FindBy(xpath = "//*[@class='bui-button__text'")
     WebElement submitButton;
 
-    public MailRegistration() {
-        property = new Properties();
-    }
 
-    public  void YandexMailRegistration () throws InterruptedException, IOException {
+    @FindBy(xpath = "//*[contains(text(),'%noreply@booking.com')]")
+    WebElement replyEmail;
+
+    public  void YandexMailRegistration () throws InterruptedException{
 
         mailField.sendKeys(property.getProperty("EMAIL"));
         passwordField.sendKeys(property.getProperty("PASSWORD"));
         TimeUnit.SECONDS.sleep(3);
         submitButton.click();
         TimeUnit.SECONDS.sleep(3);
+        replyEmail.isDisplayed();
+    }
+
+    public String getYandex_Path() {
+        return Yandex_Path;
     }
 }
 
