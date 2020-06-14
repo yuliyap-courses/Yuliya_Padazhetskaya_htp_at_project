@@ -3,7 +3,7 @@ package ApplicationItems;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import otherStuff.MailRegistration;
+import MailImplementation.MailRegistration;
 
 import java.io.IOException;
 
