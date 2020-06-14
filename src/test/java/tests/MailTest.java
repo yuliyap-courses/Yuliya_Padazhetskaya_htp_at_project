@@ -10,7 +10,6 @@ import java.io.IOException;
 
 public class MailTest {
 
-    WebDriver driver;
     MailRegistration mailRegistration = new MailRegistration();
 
     @Before
