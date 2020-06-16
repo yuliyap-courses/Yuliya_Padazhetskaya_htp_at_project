@@ -12,7 +12,6 @@ import org.openqa.selenium.support.FindBy;
 public class HeaderTest {
 
     MailRegistration mailRegistration = new MailRegistration();
-    BaseSteps baseSteps = new BaseSteps();
     WebDriver driver;
 
     @FindBy(xpath = "//*[@id='top']/div/img")
@@ -35,9 +34,7 @@ public class HeaderTest {
     @Test
 
     public  void  checkElements() throws InterruptedException {
-        mailRegistration.getYandex_Path();
         mailRegistration.YandexMailRegistration();
-        driver.getCurrentUrl("https://www.booking.com/index.ru.html?label=gen173nr");
 
         FirstElement.isDisplayed();
         SecondElement.isDisplayed();
