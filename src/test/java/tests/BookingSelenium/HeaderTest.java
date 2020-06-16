@@ -2,15 +2,12 @@ package tests.BookingSelenium;
 
 import ApplicationItems.BaseSteps;
 import MailImplementation.MailRegistration;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
-
-
 
 public class HeaderTest {
 
@@ -28,9 +25,6 @@ public class HeaderTest {
     WebElement ThirdElement;
     @FindBy(xpath = "//*[@id='cross-product-bar]/div/span")
     WebElement ForthElement;
-
-
-
 
     @Before
     public void beforeTest() {
@@ -51,6 +45,5 @@ public class HeaderTest {
         ForthElement.isDisplayed();
 
         BaseSteps.KillDriver(driver);
-
     }
 }
