@@ -1,4 +1,4 @@
-package tests;
+package tests.Booking.MyNextTrip;
 
 import MailImplementation.MailRegistration;
 import org.junit.Before;

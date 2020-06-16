@@ -1,4 +1,4 @@
-package tests;
+package tests.BookingSelenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

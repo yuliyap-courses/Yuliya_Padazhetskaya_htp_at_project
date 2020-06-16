@@ -1,4 +1,4 @@
-package tests;
+package tests.BookingSelenium;
 
 
 import ApplicationItems.BaseSteps;
