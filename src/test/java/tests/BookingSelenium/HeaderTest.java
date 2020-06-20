@@ -1,6 +1,5 @@
 package tests.BookingSelenium;
 
-import ApplicationItems.BaseSteps;
 import MailImplementation.MailRegistration;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
+import utilites.DriverManager;
 
 public class HeaderTest {
 
@@ -35,12 +35,13 @@ public class HeaderTest {
 
     public  void  checkElements() throws InterruptedException {
         mailRegistration.YandexMailRegistration();
+        DriverManager driverManager = new DriverManager();
 
         FirstElement.isDisplayed();
         SecondElement.isDisplayed();
         ThirdElement.isDisplayed();
         ForthElement.isDisplayed();
 
-        BaseSteps.KillDriver(driver);
+        driverManager.closeDriver();
     }
 }
