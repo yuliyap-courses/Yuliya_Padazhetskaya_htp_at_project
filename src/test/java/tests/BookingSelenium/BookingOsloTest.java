@@ -1,7 +1,6 @@
 package tests.BookingSelenium;
 
 import ApplicationItems.BaseSteps;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,21 +18,18 @@ public class BookingOsloTest {
 
     WebDriver driver;
 
-    @Before
-    public void beforeTest() {
+
+    public void getDriver() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.booking.com/");
     }
 
     @Test
-    public void OsloTest() throws InterruptedException {
-
-
+    public void OsloTest(){
 
         BaseSteps.SendKeysToXpath(xpath("//*[@id='ss']"),"Oslo",driver);
 
-
-        BaseSteps.ClickToElement(xpath("//div[@data-calendar2-title='Приезжаю']"),driver);
+        BaseSteps.ClickToElement(xpath("//*[@id='//*class='sb-searchbox__button']"),driver);
 
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_YEAR, 1);
@@ -62,31 +58,24 @@ public class BookingOsloTest {
         builder.moveToElement(driver.findElement(xpath("//*[@id='filter_price']/div[2]/a[1]/label/div/span[1]")))
                 .click().build().perform();
 
-
-     BaseSteps.FindElement(xpath("//*[@data-id='class-3']"),driver);
-        Thread.sleep(3000);
+        BaseSteps.FindElement(xpath("//*[@data-id='class-3']"),driver);
 
         WebElement hotelFour = driver.findElement(xpath("//*[@data-id='class-4']"));
         hotelFour.click();
-        Thread.sleep(3000);
 
         Actions builder2 = new Actions(driver);
 
         WebElement goToTenthHotel = driver.findElement(xpath("//*[@data-hotelid][10]"));
         builder2.moveToElement(goToTenthHotel).perform();
-        Thread.sleep(3000);
 
         WebElement nameOfTenthHotel = driver.findElement(xpath("//*[@data-hotelid][10]//span[contains(@class,'sr-hotel__name')]"));
         builder2.moveToElement(nameOfTenthHotel).perform();
-        Thread.sleep(3000);
 
         WebElement highLightTenthHotel = driver.findElement(xpath("//*[@data-hotelid][10]"));
         builder2.moveToElement(highLightTenthHotel).perform();
-        Thread.sleep(3000);
 
         WebElement highLightNameOfTenthHotel = driver.findElement(xpath("//*[@data-hotelid][10]//span[contains(@class,'sr-hotel__name')]"));
         builder2.moveToElement(highLightNameOfTenthHotel).perform();
-        Thread.sleep(3000);
 
         //Assert.assertTrue("Something wrong", "color: red;", highLightNameOfTenthHotel.getAttribute("style"));
 

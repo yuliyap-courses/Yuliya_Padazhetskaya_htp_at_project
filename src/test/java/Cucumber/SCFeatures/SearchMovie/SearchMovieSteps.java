@@ -10,8 +10,7 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import settings.Config;
-import utilites.Driver;
+import utilites.DriverManager;
 
 public class SearchMovieSteps {
     WebDriver driver;
@@ -20,7 +19,9 @@ public class SearchMovieSteps {
     @Before
 
     public void beforeTest() {
-        Driver.initDriver(Config.CHROME);
+        DriverManager driverManager = new DriverManager();
+        driverManager.createLocalDriver();
+        driverManager.getDriver();
     }
 
     @Given("I open an app")

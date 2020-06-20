@@ -5,8 +5,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
-import settings.Config;
-import utilites.Driver;
+import utilites.DriverManager;
 
 public class LoginToSilverScreen{
 
@@ -17,8 +16,9 @@ SilverSteps silverSteps = new SilverSteps();
     @Before
 
     public void beforeTest(){
-        Driver.initDriver(Config.CHROME);
-
+        DriverManager driverManager = new DriverManager();
+        driverManager.createLocalDriver();
+        driverManager.getDriver();
     }
 
     @Given("I Login To SilverScreen site")

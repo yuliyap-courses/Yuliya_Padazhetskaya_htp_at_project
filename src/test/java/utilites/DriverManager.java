@@ -2,46 +2,36 @@ package utilites;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import settings.Config;
 
 public class DriverManager {
+    WebDriver driver = createLocalDriver();
+    DriverType driverType;
 
-    public static WebDriver getDriver( Config config) {
+    private WebDriver createDriver() {
 
-        switch (config) {
+        driver = createLocalDriver();
+        return driver;
+    }
+
+    public WebDriver createLocalDriver() {
+        switch (driverType) {
+            case FIREFOX:
+                driver = new FirefoxDriver();
+                break;
             case CHROME:
-                return getChromeDriver();
-            case FF:
-                return getFFDriver();
-            case EDGE:
-                return getEdgeDriver();
-            default:
-                throw null;
-        }
+                driver = new ChromeDriver();
+                break; }
+        return null;
     }
 
-    private static WebDriver getEdgeDriver() {
-        return new EdgeDriver();
+    public WebDriver getDriver() {
+        if(driver == null) driver = createDriver();
+        return driver;
     }
-
-    private static WebDriver getFFDriver() {
-        return new FirefoxDriver();
+    public void closeDriver() {
+        driver.close();
+        driver.quit();
     }
-
-    private static WebDriver getChromeDriver() {
-        ChromeOptions options = new ChromeOptions();
-
-        options.addArguments("--headless");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--window-size=1920,1200");
-        options.addArguments("--ignore-certificate-errors");
-
-        System.setProperty("webdriver.chrome.driver", "extra/chromedriver.exe");
-        System.setProperty("webdriver.chrome.silentOutput", "true");
-        return new ChromeDriver();
-    }
-
 }
+

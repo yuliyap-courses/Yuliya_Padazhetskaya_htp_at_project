@@ -6,8 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
-import settings.Config;
-import utilites.Driver;
+import utilites.DriverManager;
 
 public class LoginToSiteWithBlankLogin {
     WebDriver driver;
@@ -16,8 +15,9 @@ public class LoginToSiteWithBlankLogin {
     @Before
 
     public void beforeTest(){
-        Driver.initDriver(Config.CHROME);
-
+        DriverManager driverManager = new DriverManager();
+        driverManager.createLocalDriver();
+        driverManager.getDriver();
     }
 
     @Given("I am on login page on Silver Screen site")
