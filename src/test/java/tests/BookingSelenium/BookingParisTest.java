@@ -16,9 +16,10 @@ public class BookingParisTest{
 
 @Test
 public void ParisTest(){
+
         DriverManager driverManager = new DriverManager();
         driverManager.createLocalDriver();
-        driverManager.getDriver();
+
         driver.get("https://www.booking.com/");
 
          BaseSteps.SendKeysToXpath(xpath("//*[@id='ss']"),"Paris", driver);
