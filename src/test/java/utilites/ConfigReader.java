@@ -11,8 +11,7 @@ public class ConfigReader {
     private Properties properties;
     private final String propertyFilePath="src/test/java/properties/WebConfig.properties";
 
-
-    public ConfigReader(){
+    public void ConfigReaderProp(){
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(propertyFilePath));
