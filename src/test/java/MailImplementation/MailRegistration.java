@@ -21,7 +21,6 @@ public class MailRegistration {
     @FindBy(xpath = "//*[@class='bui-button__text'")
     WebElement submitButton;
 
-
     @FindBy(xpath = "//*[contains(text(),'%noreply@booking.com')]")
     WebElement replyEmail;
 

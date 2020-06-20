@@ -1,47 +1,36 @@
 package tests.BookingSelenium;
 
-import ApplicationItems.BaseSteps;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-
+import utilites.DriverManager;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
 import static org.openqa.selenium.By.xpath;
-
 
 public class BookingOsloTest {
 
     WebDriver driver;
-
-
-    public void getDriver() {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.booking.com/");
-    }
-
     @Test
     public void OsloTest(){
+        DriverManager driverManager = new DriverManager();
+        driverManager.createLocalDriver();
+        driverManager.getDriver();
+        driver.get("https://www.booking.com/");
 
         BaseSteps.SendKeysToXpath(xpath("//*[@id='ss']"),"Oslo",driver);
-
         BaseSteps.ClickToElement(xpath("//*[@id='//*class='sb-searchbox__button']"),driver);
-
+        //Calendar testing need to change
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_YEAR, 1);
-
         Date threeDays = calendar.getTime();
         calendar.add(Calendar.DAY_OF_YEAR, 1);
         Date tenDays = calendar.getTime();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
         String datePlusTreeDays = dateFormat.format(threeDays);
         String datePlusTenDays = dateFormat.format(tenDays);
-
         BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]", datePlusTreeDays)),driver);
         BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]", datePlusTenDays)),driver);
 
@@ -59,7 +48,6 @@ public class BookingOsloTest {
                 .click().build().perform();
 
         BaseSteps.FindElement(xpath("//*[@data-id='class-3']"),driver);
-
         WebElement hotelFour = driver.findElement(xpath("//*[@data-id='class-4']"));
         hotelFour.click();
 
@@ -77,8 +65,7 @@ public class BookingOsloTest {
         WebElement highLightNameOfTenthHotel = driver.findElement(xpath("//*[@data-hotelid][10]//span[contains(@class,'sr-hotel__name')]"));
         builder2.moveToElement(highLightNameOfTenthHotel).perform();
 
-        //Assert.assertTrue("Something wrong", "color: red;", highLightNameOfTenthHotel.getAttribute("style"));
-
+        driverManager.closeDriver();
     }
 }
 
