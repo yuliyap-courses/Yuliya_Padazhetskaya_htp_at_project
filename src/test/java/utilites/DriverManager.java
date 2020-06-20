@@ -2,12 +2,9 @@ package utilites;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverManager {
     WebDriver driver = createLocalDriver();
-    DriverType driverType;
-
     private WebDriver createDriver() {
 
         driver = createLocalDriver();
@@ -15,13 +12,7 @@ public class DriverManager {
     }
 
     public WebDriver createLocalDriver() {
-        switch (driverType) {
-            case FIREFOX:
-                driver = new FirefoxDriver();
-                break;
-            case CHROME:
-                driver = new ChromeDriver();
-                break; }
+        driver = new ChromeDriver();
         return null;
     }
 
