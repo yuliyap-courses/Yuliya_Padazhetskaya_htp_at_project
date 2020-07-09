@@ -19,7 +19,7 @@ public class SilverSteps {
     }
 
     public void CheckPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(driver);
     }
 
     @FindBy(xpath = "//*[@class=/sc-fyjhYU eVJmYW/]")
