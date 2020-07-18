@@ -43,6 +43,7 @@ public class SilverSteps {
     WebElement searchContainer;
 
 
+
     public void OpenLoginContainer() {
         loginContainer.click();
     }

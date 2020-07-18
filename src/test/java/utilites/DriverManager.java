@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class DriverManager {
     ConfigReader configReader = new ConfigReader();
     WebDriver driver = createLocalDriver();
-    private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
 
     private WebDriver createDriver() {
 

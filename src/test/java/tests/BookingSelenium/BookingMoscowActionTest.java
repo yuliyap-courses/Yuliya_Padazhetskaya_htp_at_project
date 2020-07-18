@@ -24,7 +24,7 @@ public class BookingMoscowActionTest {
         driver.get("https://www.booking.com/");
 
         BaseSteps.SendKeysToXpath(xpath("[//*[@id='ss']"),"Moscow",driver);
-        BaseSteps.ClickToElement(xpath("//*[@id='//*class='sb-searchbox__button']"),driver);
+        //BaseSteps.ClickToElement(xpath("//*[@id='//*class='sb-searchbox__button']"),driver);
 
         //Calendar testing
         Calendar calendar = Calendar.getInstance();
@@ -35,8 +35,10 @@ public class BookingMoscowActionTest {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String datePlusTreeDays = dateFormat.format(threeDays);
         String datePlusTenDays = dateFormat.format(tenDays);
-        BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]", datePlusTreeDays)), driver);
-        BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]", datePlusTenDays)), driver);
+        //BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]", datePlusTreeDays)), driver);
+        //BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]", datePlusTenDays)), driver);
+
+
         //actions using
         Actions builder = new Actions(driver);
             builder.moveToElement(driver.findElement
