@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Yuliya_Padazhetskaya_project" />
         <module name="YuliyaPadajetskaya_htp_at_project" />
+        <module name="Yuliya_Padazhetskaya_htp_at_project" />
       </profile>
     </annotationProcessing>
   </component>
