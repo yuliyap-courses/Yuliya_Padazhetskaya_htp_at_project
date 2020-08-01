@@ -1,4 +1,4 @@
-package tests.BookingSelenium;
+package tests.BookingCucumber;
 
 import MailImplementation.MailRegistration;
 import org.junit.Before;

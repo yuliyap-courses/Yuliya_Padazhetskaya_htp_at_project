@@ -1,15 +1,12 @@
-package tests.BookingSelenium;
+package tests.BookingCucumber;
 
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import utilites.DriverManager;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
-import static org.openqa.selenium.By.xpath;
 
 public class BookingParisTest{
     WebDriver driver;
@@ -22,8 +19,8 @@ public void ParisTest(){
 
         driver.get("https://www.booking.com/");
 
-         BaseSteps.SendKeysToXpath(xpath("//*[@id='ss']"),"Paris", driver);
-         BaseSteps.ClickToElement(xpath("//*[@id='//*class='sb-searchbox__button']"),driver);
+     //    BaseSteps.SendKeysToXpath(xpath("//*[@id='ss']"),"Paris", driver);
+     //    BaseSteps.ClickToElement(xpath("//*[@id='//*class='sb-searchbox__button']"),driver);
 
         //Calendar testing
         Calendar calendar = Calendar.getInstance();
@@ -33,9 +30,9 @@ public void ParisTest(){
         Date tenDays = calendar.getTime();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String datePlusTreeDays = dateFormat.format(threeDays);
-        String datePlusTenDays = dateFormat.format(tenDays);
+        String datePlusTenDays = dateFormat.format(tenDays);}
 
-        BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]",datePlusTreeDays)),driver);
+     /*   BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]",datePlusTreeDays)),driver);
         BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]", datePlusTenDays)),driver);
        //room selector
         BaseSteps.FindElement(xpath("//*[@id='frm']/div[1]/div[3]"), driver);
@@ -55,5 +52,5 @@ public void ParisTest(){
         int hotelPerNight = Integer.parseInt(minPriceFromMax) / 7;
         System.out.println("Minimum price per night from " + hotelPerNight);
         driverManager.closeDriver();
-    }
+    }*/
 }

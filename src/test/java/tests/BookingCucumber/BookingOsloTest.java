@@ -1,4 +1,4 @@
-package tests.BookingSelenium;
+package tests.BookingCucumber;
 
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -20,8 +20,8 @@ public class BookingOsloTest {
         driverManager.getDriver();
         driver.get("https://www.booking.com/");
 
-        BaseSteps.SendKeysToXpath(xpath("//*[@id='ss']"),"Oslo",driver);
-        BaseSteps.ClickToElement(xpath("//*[@id='//*class='sb-searchbox__button']"),driver);
+       // BaseSteps.SendKeysToXpath(xpath("//*[@id='ss']"),"Oslo",driver);
+      //  BaseSteps.ClickToElement(xpath("//*[@id='//*class='sb-searchbox__button']"),driver);
         //Calendar testing need to change
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_YEAR, 1);
@@ -31,8 +31,8 @@ public class BookingOsloTest {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String datePlusTreeDays = dateFormat.format(threeDays);
         String datePlusTenDays = dateFormat.format(tenDays);
-        BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]", datePlusTreeDays)),driver);
-        BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]", datePlusTenDays)),driver);
+       // BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]", datePlusTreeDays)),driver);
+     //   BaseSteps.FindElement(xpath(String.format("//*[contains(@data-date,'%s')]", datePlusTenDays)),driver);
 
         Actions builder = new Actions(driver);
         builder.moveToElement(driver.findElement
@@ -47,7 +47,7 @@ public class BookingOsloTest {
         builder.moveToElement(driver.findElement(xpath("//*[@id='filter_price']/div[2]/a[1]/label/div/span[1]")))
                 .click().build().perform();
 
-        BaseSteps.FindElement(xpath("//*[@data-id='class-3']"),driver);
+      //  BaseSteps.FindElement(xpath("//*[@data-id='class-3']"),driver);
         WebElement hotelFour = driver.findElement(xpath("//*[@data-id='class-4']"));
         hotelFour.click();
 
