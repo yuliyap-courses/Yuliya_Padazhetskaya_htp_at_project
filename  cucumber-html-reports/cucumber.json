@@ -1,0 +1,86 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "Login app",
+        "description": "",
+        "id": "login-to-silver-screen;login-app",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 5,
+            "name": "I Login To SilverScreen site",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 6,
+            "name": "I login with \u003clogin\u003e and \u003cpassword\u003e",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 7,
+            "name": "I can see Red Carpet Club \u003clevel\u003e in upper right corner",
+            "match": {},
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 9,
+        "name": "Login app with login blank field",
+        "description": "",
+        "id": "login-to-silver-screen;login-app-with-login-blank-field",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 10,
+            "name": "I am on login page on Silver Screen site",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 11,
+            "name": "I left blank \u003clogin\u003e field",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 12,
+            "name": "I see  message \"Enter a correct login\"",
+            "match": {},
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Login to Silver Screen",
+    "description": "",
+    "id": "login-to-silver-screen",
+    "keyword": "Feature",
+    "uri": "src/test/java/CoursesDirectories/Cucumber/SCFeatures/StepsDefinition/LoginToSiteFeature.feature"
+  }
+]

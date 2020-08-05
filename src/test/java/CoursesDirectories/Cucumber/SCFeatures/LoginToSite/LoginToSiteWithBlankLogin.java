@@ -1,29 +1,21 @@
-package Cucumber.SCFeatures.LoginToSite;
+package CoursesDirectories.Cucumber.SCFeatures.LoginToSite;
 
-import Cucumber.SCFeatures.BasicSteps.SilverSteps;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
-import utilites.DriverManager;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginToSiteWithBlankLogin {
-    WebDriver driver;
+
     SilverSteps silverSteps = new SilverSteps();
-
-    @Before
-
-    public void beforeTest(){
-        DriverManager driverManager = new DriverManager();
-        driverManager.createLocalDriver();
-        driverManager.getDriver();
-    }
 
     @Given("I am on login page on Silver Screen site")
     public void iAmOnLoginPageOnSilverScreenSite() {
+        System.setProperty("webdriver.chrome.driver", "src/test/java/CoursesDirectories/Cucumber/SCFeatures/chromedriver");
+        WebDriver driver =  new ChromeDriver();
         driver.get("https://silverscreen.by/");
-
     }
 
     @When("I left blank <login> field")
@@ -39,11 +31,9 @@ public class LoginToSiteWithBlankLogin {
         }
     }
 
-    @Then("I see  message {string}")
+    @Then("I see correct  message ")
     public void iSeeMessage(String string) {
-//   Assert.assertFalse(!new SilverSteps().AllertShows(silverSteps.AllertShows()));
-
+       silverSteps.AllertShows();
     }
-
 
 }
