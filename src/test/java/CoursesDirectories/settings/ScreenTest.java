@@ -1,9 +1,10 @@
-package settings;
+package CoursesDirectories.settings;
+
 import org.openqa.selenium.WebDriver;
 
     public class ScreenTest {
 
-        public static void setScreenRatio(ScreenRatio mode, WebDriver driver) {
+        public static void setScreenRatio(settings.ScreenRatio mode, WebDriver driver) {
             switch (mode) {
                 case FULL_SCREEN:
                     setWindowMode(driver);
