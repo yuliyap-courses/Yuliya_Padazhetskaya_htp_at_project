@@ -1,11 +1,13 @@
 package сucumber.SCFeatures.LoginToSite;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.Properties;
 
 public class SilverSteps {
+    WebDriver driver;
 
     public final String Yandex_Path;
     Properties property;
@@ -14,8 +16,10 @@ public class SilverSteps {
         Yandex_Path = "src/test/java/properties/YandexMail.properties";
     }
 
+    @FindBy(xpath = "//*[contains(text(),'Вход и привилегии')]")
+     WebElement enterLink;
 
-    @FindBy(xpath = "//*[@class=/sc-fyjhYU eVJmYW/]")
+    @FindBy(xpath = "//*[contains(text(),'Вход в личный кабинет')]")
     WebElement loginContainer;
 
     @FindBy(xpath = "//*[@type= /email/]")
@@ -36,9 +40,16 @@ public class SilverSteps {
     @FindBy(xpath = "//*class='sc-fhiYOA hTrPQB']")
     WebElement searchContainer;
 
-
+    public  void MoveMouseToEnterElem(){
+        enterLink.isSelected();
+}
     public void OpenLoginContainer() {
-        loginContainer.click();
+        try {
+            loginContainer.wait();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        loginContainer.isDisplayed();
     }
 
     public boolean EnterEmailToLoginField(Object o) {

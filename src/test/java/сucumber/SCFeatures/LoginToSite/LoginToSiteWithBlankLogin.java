@@ -16,16 +16,14 @@ public class LoginToSiteWithBlankLogin {
 
     @Given("I am on login page on Silver Screen site")
     public void iAmOnLoginPageOnSilverScreenSite() {
-        System.setProperty("webdriver.chrome.driver", "src/test/java/CoursesDirectories/Cucumber/SCFeatures/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver =  new ChromeDriver();
-        driver.get("https://silverscreen.by/");
+        driver.get("https://silverscreen.by/");;
     }
 
     @When("I left blank <login> field")
-    public void iLeftBlankLoginField() {
-        WebElement LoginContainer = driver.findElement(By.xpath("//*[@id='root']/header/div/div/div/div[3]/div[2]/div[3]/div[1]/div[1]/div[1]/span/div[2]/span"));
-        Actions actionProvider = new Actions(driver);
-        actionProvider.moveToElement(LoginContainer);
+    public void iLeftBlankLoginField() throws InterruptedException {
+        silverSteps.MoveMouseToEnterElem();
 
         silverSteps.OpenLoginContainer();
         silverSteps.SubmitByButton();
